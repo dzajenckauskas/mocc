@@ -35,7 +35,7 @@ type Props = {
 // 🔧 Centralize contact info here
 const PHONE_RAW = '+37060792111';
 const PHONE_DISPLAY = '+370 607 92111';
-const EMAIL = 'info@opklinika.lt';
+const EMAIL = 'info@mocc.lt';
 const ADDRESS_TEXT = 'Laisvės pr. 77, Vilnius';
 const MAP_URL = 'https://goo.gl/maps/RVoW7FDnbvK3EUiBA';
 

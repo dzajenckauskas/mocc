@@ -131,7 +131,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const doc = React.createElement(ProductCatalogDocument, {
       products,
-      brand: 'www.opklinika.lt',
+      brand: 'www.mocc.lt',
       baseUrl: process.env.NEXT_PUBLIC_URL,
     }) as unknown as React.ReactElement<import('@react-pdf/renderer').DocumentProps>
 

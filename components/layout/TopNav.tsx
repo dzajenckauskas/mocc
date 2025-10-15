@@ -21,11 +21,11 @@ const TopNav = () => {
                         </Typography>
                     </Stack>
                 </Link>
-                <Link href={`mailto:${'info@opklinika.lt'}`} passHref>
+                <Link href={`mailto:${'info@mocc.lt'}`} passHref>
                     <Stack direction={'row'} spacing={1} sx={{ cursor: 'pointer' }} alignItems={'center'}>
                         <MailOutlinedIcon fontSize='small' sx={{ height: '18px', marginRight: '-5px' }} />
                         <Typography fontWeight={300} color={'#fff'} fontSize={'13px'} className="underlineOnHover">
-                            {'info@opklinika.lt'}
+                            {'info@mocc.lt'}
                         </Typography>
                     </Stack>
                 </Link>

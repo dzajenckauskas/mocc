@@ -1,9 +1,9 @@
-# Opklinika
+# Mocc
 
 ## Overview
-Opklinika is a medical services platform designed to connect users with healthcare providers. This frontend project is built using modern web technologies to ensure a seamless user experience and efficient content management.
+Mocc is a medical services platform designed to connect users with healthcare providers. This frontend project is built using modern web technologies to ensure a seamless user experience and efficient content management.
 
-Website: [www.opklinika.lt](https://www.opklinika.lt)
+Website: [www.mocc.lt](https://www.mocc.lt)
 
 ## Tech Stack
 - **Frontend:** React, Next.js, TypeScript
@@ -27,8 +27,8 @@ Ensure you have the following installed:
 ### Installation Steps
 1. Clone the repository:
    ```sh
-   git clone https://github.com/dzajenckauskas/opklinika-front.git
-   cd opklinika-front
+   git clone https://github.com/dzajenckauskas/mocc.git
+   cd mocc
    ```
 2. Install dependencies:
    ```sh

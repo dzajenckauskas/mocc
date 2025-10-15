@@ -99,11 +99,11 @@ const Header = () => {
                                 </Typography>
                             </Stack>
                         </Link>
-                        <Link href={`mailto:${'info@opklinika.lt'}`} passHref>
+                        <Link href={`mailto:${'info@mocc.lt'}`} passHref>
                             <Stack direction={'row'} spacing={1} sx={{ cursor: 'pointer' }} alignItems={'center'}>
                                 <MailOutlinedIcon fontSize='small' sx={{ height: '18px', color: theme.palette.secondary.main, marginRight: '-5px' }} />
                                 <Typography fontWeight={300} color={theme.palette.secondary.main} fontSize={'13px'} className="underlineOnHover">
-                                    {'info@opklinika.lt'}
+                                    {'info@mocc.lt'}
                                 </Typography>
                             </Stack>
                         </Link>

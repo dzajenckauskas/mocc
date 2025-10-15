@@ -34,7 +34,7 @@ const KontaktaiPage = ({ title, color }: Props) => {
                         EL. PAŠTAS
                     </Typography>
                     <Typography variant='body1' color={'secondary.main'}>
-                        info@opklinika.lt
+                        info@mocc.lt
                     </Typography>
                 </Stack>
                 <Stack>
