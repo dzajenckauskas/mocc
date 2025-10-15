@@ -153,7 +153,7 @@ export default function AboutFAQSection({
     const data = items ?? makeItems(accent);
 
     return (
-        <Box sx={{ width: '100vw', bgcolor: bg }}>
+        <Box sx={{ width: '100vw', bgcolor: bg, pt: 4 }}>
             {/* spacing keeper */}
             <Stack
                 sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, width: '100%' }}
