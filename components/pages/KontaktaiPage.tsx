@@ -1,6 +1,7 @@
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Layout from '../Layout';
+import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE_DISPLAY } from '@/utils/contactInfo';
 
 type Props = {
     title?: string;
@@ -18,7 +19,7 @@ const KontaktaiPage = ({ title, color }: Props) => {
                         ADRESAS
                     </Typography>
                     <Typography variant='body1' color={'secondary.main'}>
-                        Laisvės pr.77, Vilnius
+                        {COMPANY_ADDRESS}
                     </Typography>
                 </Stack>
                 <Stack>
@@ -26,7 +27,7 @@ const KontaktaiPage = ({ title, color }: Props) => {
                         TELEFONAS
                     </Typography>
                     <Typography variant='body1' color={'secondary.main'}>
-                        +370 607 921 11
+                        {COMPANY_PHONE_DISPLAY}
                     </Typography>
                 </Stack>
                 <Stack>
@@ -34,7 +35,7 @@ const KontaktaiPage = ({ title, color }: Props) => {
                         EL. PAŠTAS
                     </Typography>
                     <Typography variant='body1' color={'secondary.main'}>
-                        info@mocc.lt
+                        {COMPANY_EMAIL}
                     </Typography>
                 </Stack>
                 <Stack>

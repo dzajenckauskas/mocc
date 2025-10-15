@@ -9,6 +9,13 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { theme } from '../theme'
+import {
+    COMPANY_ADDRESS,
+    COMPANY_EMAIL,
+    COMPANY_GMAPS_URL,
+    COMPANY_PHONE_DISPLAY,
+    COMPANY_PHONE_TEL,
+} from '@/utils/contactInfo'
 
 const Header = () => {
     const primaryColor = '#1E6EA1'
@@ -90,28 +97,28 @@ const Header = () => {
                         </Stack>
 
                     </Stack>
-                    <Stack direction={'column'} mt={1} spacing={3} pb={6} px={3} justifyContent={'flex-start'} width={'100%'}>
-                        <Link href={`tel:${'+370 607 921 11'}`} passHref>
+                <Stack direction={'column'} mt={1} spacing={3} pb={6} px={3} justifyContent={'flex-start'} width={'100%'}>
+                        <Link href={`tel:${COMPANY_PHONE_TEL}`} passHref>
                             <Stack direction={'row'} spacing={1} sx={{ cursor: 'pointer' }} alignItems={'center'}>
                                 <LocalPhoneOutlinedIcon fontSize='small' sx={{ height: '18px', color: theme.palette.secondary.main, marginRight: '-5px' }} />
                                 <Typography fontWeight={300} color={theme.palette.secondary.main} fontSize={'13px'} className="underlineOnHover">
-                                    {'+370 607 92111'}
+                                    {COMPANY_PHONE_DISPLAY}
                                 </Typography>
                             </Stack>
                         </Link>
-                        <Link href={`mailto:${'info@mocc.lt'}`} passHref>
+                        <Link href={`mailto:${COMPANY_EMAIL}`} passHref>
                             <Stack direction={'row'} spacing={1} sx={{ cursor: 'pointer' }} alignItems={'center'}>
                                 <MailOutlinedIcon fontSize='small' sx={{ height: '18px', color: theme.palette.secondary.main, marginRight: '-5px' }} />
                                 <Typography fontWeight={300} color={theme.palette.secondary.main} fontSize={'13px'} className="underlineOnHover">
-                                    {'info@mocc.lt'}
+                                    {COMPANY_EMAIL}
                                 </Typography>
                             </Stack>
                         </Link>
-                        <Link href={`https://goo.gl/maps/RVoW7FDnbvK3EUiBA`} passHref target={'_blank'}>
+                        <Link href={COMPANY_GMAPS_URL} passHref target={'_blank'}>
                             <Stack direction={'row'} spacing={1} sx={{ cursor: 'pointer' }} alignItems={'center'}>
                                 <PlaceOutlinedIcon fontSize='small' sx={{ height: '19px', color: theme.palette.secondary.main, marginRight: '-5px' }} />
                                 <Typography fontWeight={300} color={theme.palette.secondary.main} fontSize={'13px'} className="underlineOnHover">
-                                    {'Laisvės pr. 77, Vilnius'}
+                                    {COMPANY_ADDRESS}
                                 </Typography>
                             </Stack>
                         </Link>

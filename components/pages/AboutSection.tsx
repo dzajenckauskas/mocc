@@ -14,6 +14,13 @@ import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import PlaceIcon from '@mui/icons-material/Place';
 import Link from 'next/link';
+import {
+    COMPANY_ADDRESS,
+    COMPANY_EMAIL,
+    COMPANY_GMAPS_URL,
+    COMPANY_PHONE_DISPLAY,
+    COMPANY_PHONE_TEL,
+} from '@/utils/contactInfo';
 
 type FAQItem = {
     id: string;
@@ -29,13 +36,6 @@ type Props = {
     bg?: string;
     items?: FAQItem[];
 };
-
-// 🔧 Centralize contact info here
-const PHONE_RAW = '+37060792111';
-const PHONE_DISPLAY = '+370 607 92111';
-const EMAIL = 'info@mocc.lt';
-const ADDRESS_TEXT = 'Laisvės pr. 77, Vilnius';
-const MAP_URL = 'https://goo.gl/maps/RVoW7FDnbvK3EUiBA';
 
 const makeItems = (accent: string): FAQItem[] => [
     {
@@ -65,15 +65,15 @@ const makeItems = (accent: string): FAQItem[] => [
             <Typography component="span" sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary' }}>
                 Aprašykite poreikį (priemonės tipas, naudojimo tikslas, terminas) ir, jei turite, pridėkite
                 <strong> brėžinius / 3D skenus / nuotraukas</strong>. Susisiekite:{' '}
-                <Link href={`tel:${PHONE_RAW}`} passHref>
+                <Link href={`tel:${COMPANY_PHONE_TEL}`} passHref>
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {PHONE_DISPLAY}
+                        {COMPANY_PHONE_DISPLAY}
                     </Typography>
                 </Link>{' '}
                 ·{' '}
-                <Link href={`mailto:${EMAIL}`} passHref>
+                <Link href={`mailto:${COMPANY_EMAIL}`} passHref>
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {EMAIL}
+                        {COMPANY_EMAIL}
                     </Typography>
                 </Link>
                 .
@@ -111,15 +111,15 @@ const makeItems = (accent: string): FAQItem[] => [
             <Typography component="span" sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary' }}>
                 Taikome garantinius įsipareigojimus, atliekame priežiūrą ir remontą, keičiame detales, konsultuojame dėl
                 saugaus naudojimo ir periodinės priežiūros. Kreipkitės{' '}
-                <Link href={`tel:${PHONE_RAW}`} passHref>
+                <Link href={`tel:${COMPANY_PHONE_TEL}`} passHref>
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {PHONE_DISPLAY}
+                        {COMPANY_PHONE_DISPLAY}
                     </Typography>
                 </Link>{' '}
                 arba{' '}
-                <Link href={`mailto:${EMAIL}`} passHref>
+                <Link href={`mailto:${COMPANY_EMAIL}`} passHref>
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {EMAIL}
+                        {COMPANY_EMAIL}
                     </Typography>
                 </Link>
                 .
@@ -133,9 +133,9 @@ const makeItems = (accent: string): FAQItem[] => [
         answer: (
             <Typography component="span" sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary' }}>
                 Dirbame{' '}
-                <Link href={MAP_URL} target="_blank" rel="noopener noreferrer">
+                <Link href={COMPANY_GMAPS_URL} target="_blank" rel="noopener noreferrer">
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {ADDRESS_TEXT}
+                        {COMPANY_ADDRESS}
                     </Typography>
                 </Link>
                 . Pagal poreikį organizuojame išvykstamuosius matavimus Lietuvoje (iš anksto suderinus sąlygas ir terminus).

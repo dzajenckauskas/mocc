@@ -14,6 +14,7 @@ import Cookies from './cookies/Cookies';
 import Header from './layout/Header';
 import { getColors } from './layout/colors';
 import ContactMap from './map/ContactMap';
+import { COMPANY_PHONE_DISPLAY, COMPANY_PHONE_TEL } from '@/utils/contactInfo';
 
 type Props = {
     title?: string;
@@ -142,11 +143,11 @@ const Layout = ({ children, categoryTitle, color, reviews, catalog, categorySlug
                         <Typography variant='h2' lineHeight={'20px'} color={'#fff'} mb={1} mt={{ lg: 0, md: 0, sm: 3, xs: 3 }} sx={{
                             textTransform: 'uppercase', textAlign: 'left'
                         }}>
-                            <Link href={`tel:${'+370 607 921 11'}`} passHref>
+                            <Link href={`tel:${COMPANY_PHONE_TEL}`} passHref>
                                 <Stack direction={'row'} spacing={3} sx={{ cursor: 'pointer' }} alignItems={'center'}>
                                     <LocalPhoneOutlinedIcon fontSize='large' sx={{ height: '50px', marginRight: '-5px' }} />
                                     <Typography fontSize={25} fontWeight={900} lineHeight={'20px'}>
-                                        {'+370 607 92111'}
+                                        {COMPANY_PHONE_DISPLAY}
                                     </Typography>
                                 </Stack>
                             </Link>
