@@ -74,9 +74,9 @@ export default function Home({ newProducts, individualProducts, services, review
 }
 export const getStaticProps: GetStaticProps = async () => {
   const [
-    // services, 
+    services,
     categories, reviews, newProducts, individualProducts] = await Promise.all([
-      // axios.get(getServicesQuery()),
+      axios.get(getServicesQuery()),
       axios.get(getCategoriesQuery()),
       axios.get(getCustomerReviewsQuery()),
       axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?filters[isNew][$eq]=true&pagination[pageSize]=12&fields[0]=title&fields[1]=slug&fields[2]=type&populate[images][fields][0]=url&populate[category][fields][0]=title`),
@@ -87,8 +87,8 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       newProducts: newProducts.data,
       individualProducts: individualProducts.data,
-      // services: services.data,
-      services: servicesData,
+      services: services.data,
+      // services: servicesData,
       categories: categories.data,
       reviews: reviews.data,
     },

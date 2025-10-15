@@ -46,8 +46,8 @@ const HomePage = ({ services, reviews, newProducts, individualProducts, categori
                         spacing={2}
                         sx={{
                             p: { xs: 2, sm: 3 },
-                            borderRadius: 2,
-                            backdropFilter: 'blur(8px)',
+                            // borderRadius: 2,
+                            backdropFilter: 'blur(2px)',
                             backgroundColor: 'rgba(255,255,255,0.06)',
                             boxShadow: '0 16px 40px rgba(0,0,0,0.25)',
                             border: '1px solid rgba(255,255,255,0.12)',
@@ -55,13 +55,14 @@ const HomePage = ({ services, reviews, newProducts, individualProducts, categori
                     >
                         <Typography
                             pb={1}
-                            fontSize={18}
+                            variant='h1'
+                            // fontSize={18}
                             color={colors.white}
                             fontWeight={900}
-                            lineHeight={'22px'}
-                            sx={{ borderLeft: '3px solid #1E6EA1', pl: 2, textTransform: 'uppercase', letterSpacing: 0.3 }}
+                            // lineHeight={'12px'}
+                            sx={{ textTransform: 'uppercase', letterSpacing: 0.3 }}
                         >
-                            Medicinos centras — individualūs ortopedijos sprendimai
+                            Individualūs ortopedijos sprendimai
                         </Typography>
 
                         <Typography fontSize={16} color={colors.white} fontWeight={300} lineHeight={'22px'} sx={{ opacity: 0.9 }}>
@@ -113,7 +114,7 @@ const HomePage = ({ services, reviews, newProducts, individualProducts, categori
                     />
                 </Stack>
             </Stack>
-            {/* <ProductsSection products={newProducts} title={'NAUJOS PRIEMONĖS'} /> */}
+            <ProductsSection products={newProducts} title={'NAUJOS PRIEMONĖS'} />
             <AboutFAQSection bg="#ffffff" accent="#1E6EA1" />
 
         </Layout>

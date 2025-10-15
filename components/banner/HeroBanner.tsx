@@ -14,7 +14,7 @@ const float = keyframes`
 
 const HeroBanner = () => {
     const colors = getColors();
-
+    const sectionHeight = { lg: 700, md: 700, sm: 600, xs: 700 }
     return (
         <Stack position="relative" overflow="hidden">
             {/* Background image — replace with your best-fit photo */}
@@ -23,17 +23,18 @@ const HeroBanner = () => {
                 left={0}
                 // top={{ lg: 130, md: 130, sm: 80, xs: 80 }}
                 width="100vw"
-                height={{ lg: 700, md: 700, sm: 700, xs: 700 }}
+                height={sectionHeight}
                 sx={{ opacity: 0.92, overflow: 'hidden' }}
                 aria-hidden
             >
                 <Image
                     alt="Medicinos centras – ortopedijos technologijos ir gamyba"
-                    src={'/media/banner.webp'}
+                    // src={'/media/banner.webp'}
+                    src={'/media/consultations.jpg'}
                     fill
                     priority
                     sizes="100vw"
-                    style={{ objectFit: 'cover', objectPosition: '50% 45%' }}
+                    style={{ objectFit: 'cover', objectPosition: '50% 50%' }}
                 />
             </Box>
 
@@ -43,12 +44,12 @@ const HeroBanner = () => {
                 left={0}
                 // top={{ lg: 130, md: 130, sm: 80, xs: 80 }}
                 width="100vw"
-                height={{ lg: 700, md: 700, sm: 700, xs: 700 }}
+                height={sectionHeight}
                 sx={{
                     background:
                         `radial-gradient(1200px 600px at 12% 18%, ${colors.primary}44, transparent 60%),
-             radial-gradient(900px 500px at 88% 72%, #00B0FF33, transparent 60%),
-             linear-gradient(180deg, #0A254033 0%, #0A254000 40%, #0A254033 100%)`,
+                     radial-gradient(900px 500px at 88% 72%, #00B0FF33, transparent 60%),
+                     linear-gradient(180deg, #0A254033 0%, #0A254000 40%, #0A254033 100%)`,
                     mixBlendMode: 'multiply',
                 }}
             />
@@ -57,13 +58,13 @@ const HeroBanner = () => {
                 left={0}
                 // top={{ lg: 130, md: 130, sm: 80, xs: 80 }}
                 width="100vw"
-                height={{ lg: 700, md: 700, sm: 700, xs: 700 }}
-                sx={{ background: `linear-gradient(90deg, ${colors.primary}A6, ${colors.primary}26)` }}
+                height={sectionHeight}
+                sx={{ background: `linear-gradient(-90deg, ${colors.primary}A6, ${colors.primary}26)` }}
             />
 
             {/* Content */}
             <Stack
-                minHeight="460px"
+                minHeight={sectionHeight}
                 zIndex={2}
                 justifyContent="flex-end"
                 alignItems="flex-start"
@@ -79,14 +80,14 @@ const HeroBanner = () => {
                     spacing={1.25}
                     sx={{
                         borderLeft: '3px solid #1E6EA1',
-                        px: 2,
-                        py: 2.5,
+                        px: 4,
+                        py: 4.5,
                         maxWidth: 760,
                         color: '#fff',
-                        backdropFilter: 'blur(10px)',
+                        backdropFilter: 'blur(2px)',
                         backgroundColor: 'rgba(10, 37, 64, 0.20)',
                         boxShadow: '0 24px 60px rgba(0,0,0,0.28)',
-                        borderRadius: 2,
+                        // borderRadius: 2,
                         animation: `${float} 6s ease-in-out infinite`,
                         '@media (prefers-reduced-motion: reduce)': { animation: 'none' },
                     }}
