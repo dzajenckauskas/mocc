@@ -32,7 +32,7 @@ const Header = () => {
                     <Stack direction={'row'} justifyContent={'space-between'} sx={{ width: '100%', maxWidth: '1200px', mx: 'auto' }}>
                         <Stack width='300px' px={{ lg: 4, md: 4, sm: 3, xs: 3 }} height={'100%'} alignSelf={'center'}>
                             <Link passHref href={'/'} aria-label={'Ortopedijos paslaugų klinika'}>
-                                <Logo icon title subtitle line primaryColor={primaryColor} />
+                                <Logo icon primaryColor={primaryColor} />
                             </Link>
                         </Stack>
                         <Stack direction={'row'} spacing={5} p={4} sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -42,12 +42,12 @@ const Header = () => {
                             <Link passHref href={'/ortopedijos-paslaugos'}>
                                 <Typography fontSize={14} color={primaryColor} fontWeight={isActive('/ortopedijos-paslaugos') ? 700 : 400}>Paslaugos</Typography>
                             </Link>
-                            <Link passHref href={'/paslaugu-kainorastis'}>
+                            {/* <Link passHref href={'/paslaugu-kainorastis'}>
                                 <Typography fontSize={14} color={primaryColor} fontWeight={isActive('/paslaugu-kainorastis') ? 700 : 400}>Kainoraštis</Typography>
-                            </Link>
-                            <Link passHref href={'#rekomendacijos'}>
+                            </Link> */}
+                            {/* <Link passHref href={'#rekomendacijos'}>
                                 <Typography fontSize={14} color={primaryColor} fontWeight={isActive('#rekomendacijos') ? 700 : 400}>Rekomendacijos</Typography>
-                            </Link>
+                            </Link> */}
                             <Link passHref href={'#kontaktai'}>
                                 <Typography fontSize={14} color={primaryColor} fontWeight={isActive('#kontaktai') ? 700 : 400}>Kontaktai</Typography>
                             </Link>
@@ -78,12 +78,12 @@ const Header = () => {
                             <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/ortopedijos-paslaugos'}>
                                 <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('/ortopedijos-paslaugos') ? 800 : 600}>Paslaugos</Typography>
                             </Link>
-                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/paslaugu-kainorastis'}>
+                            {/* <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/paslaugu-kainorastis'}>
                                 <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('/paslaugu-kainorastis') ? 800 : 600}>Kainoraštis</Typography>
-                            </Link>
-                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'#rekomendacijos'}>
+                            </Link> */}
+                            {/* <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'#rekomendacijos'}>
                                 <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('#rekomendacijos') ? 800 : 600}>Rekomendacijos</Typography>
-                            </Link>
+                            </Link> */}
                             <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'#contacts'}>
                                 <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('#contacts') ? 800 : 600}>Kontaktai</Typography>
                             </Link>

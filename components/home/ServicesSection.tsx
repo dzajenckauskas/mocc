@@ -38,7 +38,7 @@ const ServicesSection = ({ services, color }: Props) => {
                         <Grid container spacing={2}>
                             {renderServices}
                         </Grid>
-                        <Stack direction={'row'} sx={{ width: '100%', justifyContent: 'flex-end' }} pt={4}>
+                        {/* <Stack direction={'row'} sx={{ width: '100%', justifyContent: 'flex-end' }} pt={4}>
                             <Link href={'/paslaugu-kainorastis'} >
                                 <Button size="small" disableRipple sx={{
                                     display: 'flex', flexDirection: 'row', alignContent: 'center',
@@ -48,7 +48,7 @@ const ServicesSection = ({ services, color }: Props) => {
                                     <ArrowForward sx={{ height: '14px', color: colors.primary }} />
                                 </Button>
                             </Link>
-                        </Stack>
+                        </Stack> */}
                     </Stack>
                 </Stack>
             </Stack>

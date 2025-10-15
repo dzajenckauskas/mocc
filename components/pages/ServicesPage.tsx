@@ -60,13 +60,13 @@ const ServicesPage = ({ services, reviews }: Props) => {
 
                 {/* Grid of services */}
                 <Grid container spacing={4} sx={{ position: 'relative', pt: 4 }}>
-                    {services.data.map((service) => (
+                    {services.data?.map((service) => (
                         <ServiceCard service={service} key={service.id} />
                     ))}
                 </Grid>
 
                 {/* CTA (right aligned) */}
-                <Stack direction="row" sx={{ width: '100%', justifyContent: 'flex-end' }} pt={2}>
+                {/* <Stack direction="row" sx={{ width: '100%', justifyContent: 'flex-end' }} pt={2}>
                     <Link href="/paslaugu-kainorastis">
                         <Button
                             size="small"
@@ -82,7 +82,7 @@ const ServicesPage = ({ services, reviews }: Props) => {
                             <ArrowForward sx={{ height: 14, color: colors.primary }} />
                         </Button>
                     </Link>
-                </Stack>
+                </Stack> */}
             </Stack>
         </Layout>
     )

@@ -13,6 +13,7 @@ import Footer from './Footer';
 import Cookies from './cookies/Cookies';
 import Header from './layout/Header';
 import { getColors } from './layout/colors';
+import ContactMap from './map/ContactMap';
 
 type Props = {
     title?: string;
@@ -164,7 +165,7 @@ const Layout = ({ children, categoryTitle, color, reviews, catalog, categorySlug
                     />
                 </Stack>
             </Stack>
-            {reviews && <Stack sx={{ width: '100%', backgroundColor: '#f9f9f9' }} pt={8} pb={6} id={'rekomendacijos'}>
+            {/* {reviews && <Stack sx={{ width: '100%', backgroundColor: '#f9f9f9' }} pt={8} pb={6} id={'rekomendacijos'}>
                 <Typography fontSize={25} fontWeight={900} lineHeight={'20px'} color={'#1E6EA1'} mb={4} sx={{
                     textTransform: 'uppercase', textAlign: 'center'
                 }}>
@@ -177,7 +178,8 @@ const Layout = ({ children, categoryTitle, color, reviews, catalog, categorySlug
                     <Button aria-label='to next slide' variant='contained' sx={{ position: 'absolute', opacity: .5, right: '20px', height: 20, width: 20, borderRadius: '50%', p: 0, minWidth: 20 }}
                         onClick={toNextSlide}><ArrowForwardIos sx={{ p: .7 }} /></Button>
                 </Stack>
-            </Stack>}
+            </Stack>} */}
+            <ContactMap />
             <Footer />
             <Cookies />
         </Stack>

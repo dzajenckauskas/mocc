@@ -1,10 +1,11 @@
-import { getServicesQuery } from '@/app/services/getServicesQuery'
+// import { getServicesQuery } from '@/app/services/getServicesQuery'
 import { ReviewsResponseType } from '@/app/services/ReviewTypes'
 import { ServicesResponseType } from '@/app/services/ServiceType'
 import ServicesPage from '@/components/pages/ServicesPage'
 import SeoMeta from '@/components/seo/SeoMeta'
 import axios from 'axios'
 import { GetStaticProps } from 'next'
+import { servicesData } from '@/api/services'
 
 type Props = {
   services: ServicesResponseType;
@@ -45,14 +46,17 @@ export default function ServicesIndex({ services, reviews }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const [services, reviews] = await Promise.all([
-    axios.get(getServicesQuery()),
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/reviews`),
-  ])
+  const [
+    // services,
+    reviews] = await Promise.all([
+      // axios.get(getServicesQuery()),
+      axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/reviews`),
+    ])
 
   return {
     props: {
-      services: services.data,
+      services: servicesData,
+      // services: services.data,
       reviews: reviews.data,
     },
     revalidate: 86400,

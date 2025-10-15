@@ -7,13 +7,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import FlagIcon from '@mui/icons-material/Flag';
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import VerifiedIcon from '@mui/icons-material/Verified';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
-import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
-import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 import EventNoteIcon from '@mui/icons-material/EventNote';
+import BuildCircleIcon from '@mui/icons-material/BuildCircle';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import PlaceIcon from '@mui/icons-material/Place';
 import Link from 'next/link';
 
@@ -26,10 +24,10 @@ type FAQItem = {
 };
 
 type Props = {
-    title?: string;      // section heading
-    accent?: string;     // icon color
-    bg?: string;         // full-width background color
-    items?: FAQItem[];   // optional override list
+    title?: string;
+    accent?: string;
+    bg?: string;
+    items?: FAQItem[];
 };
 
 // 🔧 Centralize contact info here
@@ -41,113 +39,84 @@ const MAP_URL = 'https://goo.gl/maps/RVoW7FDnbvK3EUiBA';
 
 const makeItems = (accent: string): FAQItem[] => [
     {
-        id: 'vision',
+        id: 'about',
         icon: <VisibilityIcon fontSize="small" />,
-        question: 'Mūsų vizija',
+        question: 'Kas mes esame?',
         answer:
-            'Būti profesionalia, dinamiška ir konkurencinga ortopedijos techninių priemonių gamybos bei prekybos įmone.',
+            'Medicinos centras kuria pažangias ortopedijos technines priemones: nuo 3D skenavimo ir CAD/CAM projektavimo iki 3D spausdinimo, pritaikymo ir techninio aptarnavimo. Orientuojamės į tikslumą, lengvumą ir individualų komfortą.',
         defaultExpanded: true,
     },
     {
-        id: 'mission',
-        icon: <FlagIcon fontSize="small" />,
-        question: 'Įmonės misija',
+        id: 'services',
+        icon: <PrecisionManufacturingIcon fontSize="small" />,
+        question: 'Pagrindinės paslaugos',
         answer:
-            'Aprūpinti gyventojus atsakingai ir kokybiškai pagamintomis ortopedijos techninėmis priemonėmis, užtikrinančiomis aukštesnę gyvenimo kokybę.',
+            '• Individualūs šlaunies protezo priėmėjai ir komponentai (SLS/FDM, topologinis projektavimas)\n' +
+            '• Funkcinė protezų kosmetika ir 3D spausdinti įdėklai\n' +
+            '• 3D skenavimas, CAD/CAM modeliavimas, gamybos paruošimas\n' +
+            '• Prototipai ir taikomieji R&D darbai (jutiklių integracija, duomenų surinkimas)\n' +
+            '• Pritaikymas, reguliavimas ir techninis aptarnavimas',
     },
     {
-        id: 'coverage',
-        icon: <LocalHospitalIcon fontSize="small" />,
-        question: 'Klinikos veikla',
-        answer:
-            'Bendradarbiaujame su medicinos įstaigomis, pacientus konsultuojame ir jų gyvenamosiose vietose. Priemonės užsakomos, gaminamos ir pritaikomos beveik visoje Lietuvoje. Naudojamos kokybiškos, saugios žaliavos – gaminiai gerai vertinami gydytojų ir pacientų.',
-    },
-    {
-        id: 'quality',
-        icon: <VerifiedIcon fontSize="small" />,
-        question: 'Kokybės atitiktys ir kompensavimas',
-        answer:
-            'Gaminiai aprobuoti LR SAM, atitinka Europos direktyvos 93/42/EEB ir Lietuvos medicinos normos MN 4:2009 reikalavimus. Taikomi garantiniai įsipareigojimai. Esame sudarę sutartį su VLK – priklausomai nuo diagnozės, gaminiai ir konsultacijos gali būti visiškai arba iš dalies kompensuojami.',
-    },
-
-    // ✅ Answers updated with contacts
-    {
-        id: 'booking',
+        id: 'request',
         icon: <PhoneInTalkIcon fontSize="small" />,
-        question: 'Kaip registruotis konsultacijai?',
+        question: 'Kaip pateikti užklausą?',
         answer: (
             <Typography component="span" sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary' }}>
-                Vizitus deriname individualiai. Skambinkite{' '}
+                Aprašykite poreikį (priemonės tipas, naudojimo tikslas, terminas) ir, jei turite, pridėkite
+                <strong> brėžinius / 3D skenus / nuotraukas</strong>. Susisiekite:{' '}
                 <Link href={`tel:${PHONE_RAW}`} passHref>
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
                         {PHONE_DISPLAY}
                     </Typography>
-                </Link>
-                {' '}arba rašykite{' '}
+                </Link>{' '}
+                ·{' '}
                 <Link href={`mailto:${EMAIL}`} passHref>
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
                         {EMAIL}
                     </Typography>
                 </Link>
-                {' '}– parinksime Jums patogiausią laiką pas reikiamą specialistą.
+                .
             </Typography>
         ),
     },
     {
-        id: 'previsit',
+        id: 'inputs',
         icon: <EventNoteIcon fontSize="small" />,
-        question: 'Kaip pasiruošti vizitui?',
+        question: 'Kokią informaciją pateikti pradžioje?',
         answer: (
             <Typography component="span" sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary' }}>
-                Atsineškite turimus medicininius dokumentus (išrašus, tyrimus, siuntimą). Jei naudojate ortopedinę priemonę, pasiimkite ją vertinimui.
-                Dėl specifinių klausimų prieš vizitą galite pasiteirauti telefonu{' '}
-                <Link href={`tel:${PHONE_RAW}`} passHref>
-                    <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {PHONE_DISPLAY}
-                    </Typography>
-                </Link>
-                {' '}arba el. paštu{' '}
-                <Link href={`mailto:${EMAIL}`} passHref>
-                    <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {EMAIL}
-                    </Typography>
-                </Link>
-                .
+                Naudinga: esamos priemonės tipas (jei yra), norimi patobulinimai, matavimai ar 3D skeno failai, pageidaujamos
+                medžiagos, terminas ir ar reikalingas pirminis matavimas vietoje.
             </Typography>
         ),
     },
     {
-        id: 'custom_made',
+        id: 'process',
         icon: <BuildCircleIcon fontSize="small" />,
-        question: 'Individuali gamyba: kiek trunka ir kaip vyksta?',
+        question: 'Gamybos procesas ir terminai',
         answer: (
             <Typography component="span" sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary' }}>
-                Po konsultacijos atliekami matavimai ar nuskaitymai, parenkamos medžiagos. Gamyba dažniausiai trunka nuo kelių dienų iki kelių savaičių
-                (pagal priemonės sudėtingumą). Pritaikymo metu sureguliuojame, apmokome naudotis ir suplanuojame kontrolinį vizitą. Jei norite
-                pasitarti, skambinkite{' '}
-                <Link href={`tel:${PHONE_RAW}`} passHref>
-                    <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {PHONE_DISPLAY}
-                    </Typography>
-                </Link>
-                .
+                Atliekame skenavimą / priimame jūsų duomenis, parengiame CAD modelį, spausdiname (SLS/FDM) ir pritaikome.
+                Terminas priklauso nuo sudėtingumo – dažniausiai nuo kelių dienų iki kelių savaičių. Pritaikymo metu
+                sureguliuojame ir pateikiame naudojimo rekomendacijas.
             </Typography>
         ),
     },
     {
-        id: 'repairs',
+        id: 'service',
         icon: <HomeRepairServiceIcon fontSize="small" />,
-        question: 'Garantija, remontas ir priežiūra',
+        question: 'Garantija ir aptarnavimas',
         answer: (
             <Typography component="span" sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary' }}>
-                Visoms priemonėms taikomi garantiniai įsipareigojimai. Atliekame priežiūrą ir remontą, keičiame detales, patariame dėl saugaus naudojimo
-                ir periodinių patikrų. Kreipkitės telefonu{' '}
+                Taikome garantinius įsipareigojimus, atliekame priežiūrą ir remontą, keičiame detales, konsultuojame dėl
+                saugaus naudojimo ir periodinės priežiūros. Kreipkitės{' '}
                 <Link href={`tel:${PHONE_RAW}`} passHref>
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
                         {PHONE_DISPLAY}
                     </Typography>
-                </Link>
-                {' '}arba el. paštu{' '}
+                </Link>{' '}
+                arba{' '}
                 <Link href={`mailto:${EMAIL}`} passHref>
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
                         {EMAIL}
@@ -158,31 +127,25 @@ const makeItems = (accent: string): FAQItem[] => [
         ),
     },
     {
-        id: 'locations',
+        id: 'location',
         icon: <PlaceIcon fontSize="small" />,
-        question: 'Kur teikiamos paslaugos?',
+        question: 'Kur atliekame matavimus ir pritaikymą?',
         answer: (
             <Typography component="span" sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary' }}>
-                Konsultuojame klinikoje{' '}
+                Dirbame{' '}
                 <Link href={MAP_URL} target="_blank" rel="noopener noreferrer">
                     <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
                         {ADDRESS_TEXT}
                     </Typography>
                 </Link>
-                , o prireikus organizuojame vizitus regionuose ar paciento namuose (iš anksto suderinus). Dėl vizitų skambinkite{' '}
-                <Link href={`tel:${PHONE_RAW}`} passHref>
-                    <Typography component="span" sx={{ textDecoration: 'underline', color: 'primary.main' }}>
-                        {PHONE_DISPLAY}
-                    </Typography>
-                </Link>
-                .
+                . Pagal poreikį organizuojame išvykstamuosius matavimus Lietuvoje (iš anksto suderinus sąlygas ir terminus).
             </Typography>
         ),
     },
 ];
 
 export default function AboutFAQSection({
-    title = 'Apie mūsų kliniką',
+    title = 'Apie Medicinos centrą',
     accent = '#1E6EA1',
     bg = '#ffffff',
     items,
@@ -191,14 +154,9 @@ export default function AboutFAQSection({
 
     return (
         <Box sx={{ width: '100vw', bgcolor: bg }}>
-            {/* top container (kept for page spacing alignment) */}
+            {/* spacing keeper */}
             <Stack
-                sx={{
-                    maxWidth: '1200px',
-                    mx: 'auto',
-                    px: { lg: 4, md: 4, sm: 3, xs: 3 },
-                    width: '100%',
-                }}
+                sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, width: '100%' }}
                 spacing={3}
             >
                 <Stack />
@@ -218,13 +176,7 @@ export default function AboutFAQSection({
 
             {/* content */}
             <Stack
-                sx={{
-                    maxWidth: 800,
-                    width: '100%',
-                    mx: 'auto',
-                    px: { lg: 4, md: 4, sm: 3, xs: 2 },
-                    pb: 12,
-                }}
+                sx={{ maxWidth: 800, width: '100%', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 2 }, pb: 12 }}
                 spacing={2.5}
             >
                 {data.map((item) => (
@@ -252,10 +204,7 @@ export default function AboutFAQSection({
                             expandIcon={<ExpandMoreIcon sx={{ color: accent }} />}
                             sx={{
                                 bgcolor: '#FAFAFB',
-                                '& .MuiAccordionSummary-content': {
-                                    my: 2,
-                                    alignItems: 'center',
-                                },
+                                '& .MuiAccordionSummary-content': { my: 2, alignItems: 'center' },
                             }}
                         >
                             <Stack direction="row" alignItems="center" spacing={1.25} sx={{ width: '100%' }}>
@@ -282,9 +231,16 @@ export default function AboutFAQSection({
                         </AccordionSummary>
 
                         <AccordionDetails sx={{ p: { xs: 2, sm: 3 } }}>
-                            {/* answers already styled with Typography inside items */}
                             {typeof item.answer === 'string' ? (
-                                <Typography sx={{ fontSize: 15, lineHeight: 1.7, color: 'text.secondary', textAlign: 'justify' }}>
+                                <Typography
+                                    sx={{
+                                        whiteSpace: 'pre-line',
+                                        fontSize: 15,
+                                        lineHeight: 1.7,
+                                        color: 'text.secondary',
+                                        textAlign: 'justify',
+                                    }}
+                                >
                                     {item.answer}
                                 </Typography>
                             ) : (

@@ -8,11 +8,11 @@ import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import HeroBanner from '../banner/HeroBanner';
 import CategoriesSection from '../home/CategoriesSection';
+import ProductsSection from '../home/ProductsSection';
 import ServicesSection from '../home/ServicesSection';
 import Layout from '../Layout';
 import { getColors } from '../layout/colors';
-import ProductsSection from '../home/ProductsSection';
-import AboutSection from './AboutSection';
+import AboutFAQSection from './AboutSection';
 
 type Props = {
     title?: string;
@@ -77,7 +77,8 @@ const HomePage = ({ services, reviews, newProducts, individualProducts, categori
                 </Stack>
             </Stack>
             <ProductsSection products={newProducts} title={'NAUJOS PRIEMONĖS'} />
-            <AboutSection bg="#ffffff" accent="#1E6EA1" />
+            <AboutFAQSection bg="#ffffff" accent="#1E6EA1" />
+
         </Layout>
     )
 }
