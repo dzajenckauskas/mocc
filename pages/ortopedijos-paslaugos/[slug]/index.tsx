@@ -1,4 +1,3 @@
-// pages/ortopedijos-paslaugos/[slug].tsx (or wherever your page is)
 import axios from 'axios'
 import { GetStaticProps } from 'next'
 import { ReviewsResponseType } from '@/app/services/ReviewTypes'
@@ -15,7 +14,9 @@ export default function ServiceView(props: Props) {
 }
 
 export async function getStaticPaths() {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/services?pagination[pageSize]=100&populate=*`)
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/services?pagination[pageSize]=100&populate=*&filters[mocc][$eq]=true`,
+  )
   const paths = (res.data?.data ?? [])
     .map((item: any) => item?.attributes?.slug)
     .filter((slug: any) => typeof slug === 'string' && slug.length > 0)
@@ -29,7 +30,11 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
   if (!slugParam || Array.isArray(slugParam)) return { notFound: true }
 
   const [serviceRes, reviewsRes] = await Promise.all([
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/services?filters[slug][$eq]=${encodeURIComponent(slugParam)}&populate=*`),
+    axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/services?filters[slug][$eq]=${encodeURIComponent(
+        slugParam,
+      )}&populate=*&filters[mocc][$eq]=true`,
+    ),
     axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/reviews`),
   ])
 

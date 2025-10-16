@@ -5,77 +5,77 @@ import axios from "axios";
 import { GetServerSideProps } from "next";
 
 type Props = {
-    products: ProductsType;
-    services: {
-        data: Array<{
-            id: number;
-            attributes: {
-                slug?: string | null;
-                updatedAt?: string | null;
-                title?: string | null;
-            };
-        }>;
-        meta?: { pagination?: { pageCount?: number } };
-    };
+  products: ProductsType;
+  services: {
+    data: Array<{
+      id: number;
+      attributes: {
+        slug?: string | null;
+        updatedAt?: string | null;
+        title?: string | null;
+      };
+    }>;
+    meta?: { pagination?: { pageCount?: number } };
+  };
 };
 
 const getServicesQuery = () =>
-    `${process.env.NEXT_PUBLIC_API_URL}/api/services?pagination[pageSize]=100&fields[0]=slug&fields[1]=updatedAt&fields[2]=title`;
+  `${process.env.NEXT_PUBLIC_API_URL}/api/services?pagination[pageSize]=100&fields[0]=slug&fields[1]=updatedAt&fields[2]=title&filters[mocc][$eq]=true`;
 
 function generateSiteMap({ products, services }: Props) {
-    const now = new Date().toISOString();
+  const now = new Date().toISOString();
 
-    const baseUrl = process.env.NEXT_PUBLIC_URL;
-    const baseCatalogUrl = `${baseUrl}/ortopedijos-technikos-katalogas`;
-    const baseServicesUrl = `${baseUrl}/ortopedijos-paslaugos`;
+  const baseUrl = process.env.NEXT_PUBLIC_URL;
+  const baseCatalogUrl = `${baseUrl}/ortopedijos-technikos-katalogas`;
+  const baseServicesUrl = `${baseUrl}/ortopedijos-paslaugos`;
 
-    // Catalog pagination entries
-    const catalogPages = products.meta?.pagination?.pageCount ?? 1;
-    const catalogEntries = Array.from({ length: catalogPages }, (_v, i) => {
-        const page = i + 1;
-        const suffix = page > 1 ? `?page=${page}` : "";
-        return `
+  // Catalog pagination entries
+  const catalogPages = products.meta?.pagination?.pageCount ?? 1;
+  const catalogEntries = Array.from({ length: catalogPages }, (_v, i) => {
+    const page = i + 1;
+    const suffix = page > 1 ? `?page=${page}` : "";
+    return `
   <url>
     <loc>${`${baseCatalogUrl}${suffix}`}</loc>
     <lastmod>${now}</lastmod>
   </url>`;
-    }).join("");
+  }).join("");
 
-    // Product entries
-    const productEntries = (products.data ?? [])
-        .map((eo) => {
-            const categoryTitle = eo.attributes?.category?.data?.attributes?.title;
-            const categorySlug = toSlug(categoryTitle);
-            const productSlug = eo.attributes?.slug;
-            if (!categorySlug || !productSlug) return "";
-            return `
+  // Product entries
+  const productEntries = (products.data ?? [])
+    .map((eo) => {
+      const categoryTitle = eo.attributes?.category?.data?.attributes?.title;
+      const categorySlug = toSlug(categoryTitle);
+      const productSlug = eo.attributes?.slug;
+      if (!categorySlug || !productSlug) return "";
+      return `
   <url>
     <loc>${`${baseUrl}/ortopedijos-technika/${categorySlug}/${productSlug}`}</loc>
     <lastmod>${eo?.attributes?.updatedAt?.toString() || now}</lastmod>
   </url>`;
-        })
-        .join("");
+    })
+    .join("");
 
-    // Services index + service pages
-    const servicesIndex = `
+  // Services index + service pages
+  const servicesIndex = `
   <url>
     <loc>${baseServicesUrl}</loc>
     <lastmod>${now}</lastmod>
   </url>`;
 
-    const serviceEntries = (services.data ?? [])
-        .map((s) => {
-            const slug = s.attributes?.slug;
-            if (!slug) return "";
-            return `
+  const serviceEntries = (services.data ?? [])
+    .map((s) => {
+      const slug = s.attributes?.slug;
+      if (!slug) return "";
+      return `
   <url>
     <loc>${`${baseServicesUrl}/${slug}`}</loc>
     <lastmod>${s.attributes?.updatedAt || now}</lastmod>
   </url>`;
-        })
-        .join("");
+    })
+    .join("");
 
-    return `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
@@ -97,26 +97,26 @@ function generateSiteMap({ products, services }: Props) {
 }
 
 function SiteMap() {
-    // getServerSideProps writes the XML
-    return null;
+  // getServerSideProps writes the XML
+  return null;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-    const [productsResponse, servicesResponse] = await Promise.all([
-        axios.get(getProductsQuery()),
-        axios.get(getServicesQuery()),
-    ]);
+  const [productsResponse, servicesResponse] = await Promise.all([
+    axios.get(getProductsQuery()),
+    axios.get(getServicesQuery()),
+  ]);
 
-    const products = productsResponse.data as ProductsType;
-    const services = servicesResponse.data as Props["services"];
+  const products = productsResponse.data as ProductsType;
+  const services = servicesResponse.data as Props["services"];
 
-    const sitemap = generateSiteMap({ products, services });
+  const sitemap = generateSiteMap({ products, services });
 
-    res.setHeader("Content-Type", "text/xml");
-    res.write(sitemap);
-    res.end();
+  res.setHeader("Content-Type", "text/xml");
+  res.write(sitemap);
+  res.end();
 
-    return { props: {} };
+  return { props: {} };
 };
 
 export default SiteMap;

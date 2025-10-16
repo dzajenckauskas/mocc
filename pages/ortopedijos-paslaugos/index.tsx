@@ -1,12 +1,11 @@
 // import { getServicesQuery } from '@/app/services/getServicesQuery'
+import { getServicesQuery } from '@/app/services/getServicesQuery'
 import { ReviewsResponseType } from '@/app/services/ReviewTypes'
 import { ServicesResponseType } from '@/app/services/ServiceType'
 import ServicesPage from '@/components/pages/ServicesPage'
 import SeoMeta from '@/components/seo/SeoMeta'
 import axios from 'axios'
 import { GetStaticProps } from 'next'
-import { servicesData } from '@/api/services'
-import { getServicesQuery } from '@/app/services/getServicesQuery'
 
 type Props = {
   services: ServicesResponseType;

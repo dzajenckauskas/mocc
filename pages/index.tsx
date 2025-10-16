@@ -1,4 +1,3 @@
-import { servicesData } from '@/api/services'
 import { getCategoriesQuery } from '@/app/categories/getCategoriesQuery'
 import { CategoriesResponseType } from '@/app/categories/ServiceType'
 import { ProductsType } from '@/app/products/productTypes'
