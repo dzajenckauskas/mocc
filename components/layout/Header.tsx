@@ -49,6 +49,9 @@ const Header = () => {
                             <Link passHref href={'/ortopedijos-paslaugos'}>
                                 <Typography fontSize={14} color={primaryColor} fontWeight={isActive('/ortopedijos-paslaugos') ? 700 : 400}>Paslaugos</Typography>
                             </Link>
+                            <Link passHref href={'/es-projektai'}>
+                                <Typography fontSize={14} color={primaryColor} fontWeight={isActive('/es-projektai') ? 700 : 400}>ES projektai</Typography>
+                            </Link>
                             {/* <Link passHref href={'/paslaugu-kainorastis'}>
                                 <Typography fontSize={14} color={primaryColor} fontWeight={isActive('/paslaugu-kainorastis') ? 700 : 400}>Kainoraštis</Typography>
                             </Link> */}
@@ -84,6 +87,9 @@ const Header = () => {
                             </Link>
                             <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/ortopedijos-paslaugos'}>
                                 <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('/ortopedijos-paslaugos') ? 800 : 600}>Paslaugos</Typography>
+                            </Link>
+                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/es-projektai'}>
+                                <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('/es-projektai') ? 800 : 600}>ES projektai</Typography>
                             </Link>
                             {/* <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/paslaugu-kainorastis'}>
                                 <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('/paslaugu-kainorastis') ? 800 : 600}>Kainoraštis</Typography>

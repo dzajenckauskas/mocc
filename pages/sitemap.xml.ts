@@ -88,6 +88,11 @@ function generateSiteMap({ products, services }: Props) {
     <lastmod>${now}</lastmod>
   </url>
 
+  <url>
+    <loc>${`${baseUrl}/es-projektai`}</loc>
+    <lastmod>${now}</lastmod>
+  </url>
+
   ${catalogEntries}
   ${productEntries}
   ${servicesIndex}
