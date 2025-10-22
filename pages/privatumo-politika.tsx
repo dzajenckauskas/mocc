@@ -10,8 +10,8 @@ type Props = {
 }
 export default function PrivacyPolicyPage({ reviews }: Props) {
     const baseUrl = `${process.env.NEXT_PUBLIC_URL}/privatumo-politika`
-    const title = 'Privatumo politika - Ortopedijos paslaugų klinika'
-    const description = 'Sužinokite, kaip Ortopedijos paslaugų klinika renka, naudoja ir saugo jūsų asmens duomenis laikantis galiojančių teisės aktų.'
+    const title = 'Privatumo politika - Medicinos ir ortopedijos centras'
+    const description = 'Sužinokite, kaip Medicinos ir ortopedijos centras renka, naudoja ir saugo jūsų asmens duomenis laikantis galiojančių teisės aktų.'
 
     return (
         <>
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage({ reviews }: Props) {
                     title,
                     description,
                 }}
-                author={'Ortopedijos paslaugų klinika'}
+                author={'Medicinos ir ortopedijos centras'}
             >
                 <link rel="icon" href="/favicon.ico" />
             </SeoMeta>

@@ -38,7 +38,7 @@ const Header = () => {
                 }}>
                     <Stack direction={'row'} justifyContent={'space-between'} sx={{ width: '100%', maxWidth: '1200px', mx: 'auto' }}>
                         <Stack width='300px' px={{ lg: 4, md: 4, sm: 3, xs: 3 }} height={'100%'} alignSelf={'center'}>
-                            <Link passHref href={'/'} aria-label={'Ortopedijos paslaugų klinika'}>
+                            <Link passHref href={'/'} aria-label={'Medicinos ir ortopedijos centras'}>
                                 <Logo icon primaryColor={primaryColor} />
                             </Link>
                         </Stack>
@@ -49,6 +49,9 @@ const Header = () => {
                             <Link passHref href={'/ortopedijos-paslaugos'}>
                                 <Typography fontSize={14} color={primaryColor} fontWeight={isActive('/ortopedijos-paslaugos') ? 700 : 400}>Paslaugos</Typography>
                             </Link>
+                            {/* <Link passHref href={'/projektai/inovatyvus-slaunies-protezo-priemejas'}>
+                                <Typography fontSize={14} color={primaryColor} fontWeight={isActive('/projektai/inovatyvus-slaunies-protezo-priemejas') ? 700 : 400}>Projektai</Typography>
+                            </Link> */}
                             <Link passHref href={'/es-projektai'}>
                                 <Typography fontSize={14} color={primaryColor} fontWeight={isActive('/es-projektai') ? 700 : 400}>ES projektai</Typography>
                             </Link>
@@ -88,6 +91,9 @@ const Header = () => {
                             <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/ortopedijos-paslaugos'}>
                                 <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('/ortopedijos-paslaugos') ? 800 : 600}>Paslaugos</Typography>
                             </Link>
+                            {/* <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/projektai/inovatyvus-slaunies-protezo-priemejas'}>
+                                <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('/projektai/inovatyvus-slaunies-protezo-priemejas') ? 800 : 600}>Projektai</Typography>
+                            </Link> */}
                             <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/es-projektai'}>
                                 <Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={isActive('/es-projektai') ? 800 : 600}>ES projektai</Typography>
                             </Link>
@@ -103,7 +109,7 @@ const Header = () => {
                         </Stack>
 
                     </Stack>
-                <Stack direction={'column'} mt={1} spacing={3} pb={6} px={3} justifyContent={'flex-start'} width={'100%'}>
+                    <Stack direction={'column'} mt={1} spacing={3} pb={6} px={3} justifyContent={'flex-start'} width={'100%'}>
                         <Link href={`tel:${COMPANY_PHONE_TEL}`} passHref>
                             <Stack direction={'row'} spacing={1} sx={{ cursor: 'pointer' }} alignItems={'center'}>
                                 <LocalPhoneOutlinedIcon fontSize='small' sx={{ height: '18px', color: theme.palette.secondary.main, marginRight: '-5px' }} />

@@ -67,7 +67,7 @@ const mapProduct = (rawProduct: any): ProductViewData => {
 }
 
 const ProductView = ({ product, categories }: Props) => {
-    const seoTitle = `${product.title}${product.categoryTitle ? ` | ${product.categoryTitle}` : ''} | ${product.type} | Ortopedijos paslaugų klinika`
+    const seoTitle = `${product.title}${product.categoryTitle ? ` | ${product.categoryTitle}` : ''} | ${product.type} | Medicinos ir ortopedijos centras`
     const seoDescription = `${product.title} - ${product.description}. Atraskite aukštos kokybės ${product.type} priemones, pritaikytas pagal individualius poreikius. Užsakykite dabar!`
     const productUrl = `${process.env.NEXT_PUBLIC_URL}/ortopedijos-technika/${product.categorySlug}/${product.slug}`
     const keywords = [
@@ -97,7 +97,7 @@ const ProductView = ({ product, categories }: Props) => {
                     description: `${product.title} - ${product.description}. Pasirūpinkite savo sveikata ir komfortu su mūsų ${product.type} priemonėmis.`,
                 }}
                 keywords={keywords}
-                author={'Ortopedijos paslaugų klinika'}
+                author={'Medicinos ir ortopedijos centras'}
             >
                 <link rel="icon" href="/favicon.ico" />
             </SeoMeta>

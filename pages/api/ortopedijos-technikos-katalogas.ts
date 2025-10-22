@@ -138,7 +138,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const stream = await renderToStream(doc)
 
     res.setHeader('Content-Type', 'application/pdf')
-    res.setHeader('Content-Disposition', 'inline; filename="Ortopedijos paslaugu klinika - katalogas.pdf"')
+    res.setHeader('Content-Disposition', 'inline; filename="Medicinos ir ortopedijos centras - katalogas.pdf"')
     res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600')
 
     // @ts-ignore Node stream type is acceptable here

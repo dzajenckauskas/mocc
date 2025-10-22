@@ -24,7 +24,7 @@ export default function ServicePage({ service, reviews }: Props) {
     const absoluteImage = buildImageUrl(rawImage)
 
     const baseUrl = `${process.env.NEXT_PUBLIC_URL}/ortopedijos-paslaugos/${a.slug}`
-    const title = `${a.title} | Ortopedijos paslaugų klinika`
+    const title = `${a.title} | Medicinos ir ortopedijos centras`
     const description = a.description || 'Profesionali ortopedijos paslauga – registruokitės konsultacijai.'
 
     const crumbs: Crumb[] = [
@@ -43,13 +43,13 @@ export default function ServicePage({ service, reviews }: Props) {
                     description,
                     url: baseUrl,
                     type: 'article',
-                    siteName: 'Ortopedijos paslaugų klinika',
+                    siteName: 'Medicinos ir ortopedijos centras',
                 }}
                 twitter={{
                     title,
                     description,
                 }}
-                author="Ortopedijos paslaugų klinika"
+                author="Medicinos ir ortopedijos centras"
             >
                 <link rel="icon" href="/favicon.ico" />
             </SeoMeta>

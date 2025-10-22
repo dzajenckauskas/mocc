@@ -50,14 +50,14 @@ export default function Catalog({ products, reviews, searchTerm = '', categories
                     description: 'Peržiūrėkite mūsų ortopedijos technikos katalogą: aukštos kokybės įtvarai, protezai, ortopedinė avalynė ir daugiau. Užtikrinkite komfortą ir sveikatą su mūsų sprendimais!',
                     url: canonicalUrl,
                     type: 'website',
-                    siteName: 'Ortopedijos paslaugų klinika',
+                    siteName: 'Medicinos ir ortopedijos centras',
                 }}
                 twitter={{
                     title: 'Ortopedijos technikos katalogas | Įtvarai, Protezai ir Avalynė',
                     description: 'Mūsų ortopedijos technikos kataloge rasite įtvarus, protezus ir ortopedinę avalynę, pritaikytą jūsų individualiems poreikiams. Pasirūpinkite savo sveikata šiandien!',
                 }}
                 keywords={keywords}
-                author={'Ortopedijos paslaugų klinika'}
+                author={'Medicinos ir ortopedijos centras'}
             >
                 <link rel="icon" href="/favicon.ico" />
             </SeoMeta>

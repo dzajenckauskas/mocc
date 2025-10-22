@@ -3,9 +3,9 @@ import SeoMeta from '@/components/seo/SeoMeta'
 
 const EsProjects = () => {
   const baseUrl = `${process.env.NEXT_PUBLIC_URL}/es-projektai`
-  const title = 'ES projektai | Ortopedijos paslaugų klinika'
+  const title = 'ES projektai | Medicinos ir ortopedijos centras'
   const description =
-    'Inovatyvaus šlaunies protezo priėmėjo ir funkcinės kosmetikos prototipo vystymą finansuoja Europos Sąjungos fondai. Sužinokite daugiau apie projekto tikslus ir rezultatus.'
+    'Inovatyvaus šlaunies protezo priėmėjo ir funkcinės kosmetikos prototipo vystymą finansuoja Europos Sąjungos fondai. Sužinokite daugiau apie Medicinos ir ortopedijos centro projekto tikslus ir rezultatus.'
 
   return (
     <>
@@ -18,14 +18,14 @@ const EsProjects = () => {
           description,
           url: baseUrl,
           type: 'website',
-          siteName: 'Ortopedijos paslaugų klinika',
+          siteName: 'Medicinos ir ortopedijos centras',
           locale: 'lt_LT',
         }}
         twitter={{
           title,
           description,
         }}
-        author={'Ortopedijos paslaugų klinika'}
+        author={'Medicinos ir ortopedijos centras'}
       >
         <link rel="icon" href="/favicon.ico" />
       </SeoMeta>

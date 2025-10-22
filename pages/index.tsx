@@ -21,19 +21,23 @@ type Props = {
 
 export default function Home({ newProducts, individualProducts, services, reviews, categories }: Props) {
   const baseUrl = process.env.NEXT_PUBLIC_URL ?? ''
-  const title = 'Ortopedijos paslaugų klinika | Kokybiškos Ortopedijos Paslaugos Vilniuje'
-  const description = 'Ortopedijos paslaugų klinika Vilniuje teikia profesionalias ortopedijos paslaugas: konsultacijos, diagnostika, reabilitacija ir individualių ortopedinių priemonių gamyba. Rūpinamės jūsų sveikata ir judėjimo komfortu.'
-  const keywords = [
-    'ortopedijos klinika Vilniuje',
-    'ortopedijos paslaugos',
-    'reabilitacija Vilnius',
-    'ortopediniai įtvarai',
-    'ortopedinės priemonės',
-    'ortopedijos specialistai',
-    'protezai',
-    'ortopedinės konsultacijos',
-  ].join(', ')
+  const title = 'Medicinos ir ortopedijos centras Vilniuje | Protezai, reabilitacija, ortopediniai sprendimai'
 
+  const description =
+    'Medicinos ir ortopedijos centras (MOCC) Vilniuje – specializuota įstaiga, teikianti ortopedijos, protezavimo ir reabilitacijos paslaugas. Gaminame individualius ortopedinius gaminius, atliekame eisenos analizę, 3D skenavimą bei pritaikome gydomuosius įdėklus. Rūpinamės jūsų judėjimo laisve ir komfortu.'
+
+  const keywords = [
+    'ortopedijos centras Vilnius',
+    'ortopediniai protezai',
+    'individualūs įtvarai',
+    'eisenos analizė',
+    '3D skenavimas Vilniuje',
+    'gydomieji įdėklai',
+    'reabilitacija po traumos',
+    'ortopedas Vilniuje',
+    'ortopedinės paslaugos',
+    'ortopedinių gaminių gamyba',
+  ].join(', ')
   return (
     <>
       <SeoMeta
@@ -42,17 +46,19 @@ export default function Home({ newProducts, individualProducts, services, review
         canonical={baseUrl}
         openGraph={{
           title,
-          description: 'Apsilankykite Ortopedijos paslaugų klinikoje Vilniuje! Teikiame profesionalias konsultacijas, ortopedinių priemonių gamybą, reabilitacijos paslaugas. Mūsų prioritetas – jūsų sveikata!',
+          description:
+            'Apsilankykite Medicinos ir ortopedijos centre Vilniuje! Teikiame profesionalias konsultacijas, ortopedinių priemonių gamybą, reabilitacijos paslaugas. Mūsų prioritetas – jūsų sveikata!',
           url: baseUrl,
           type: 'website',
-          siteName: 'Ortopedijos paslaugų klinika',
+          siteName: 'Medicinos ir ortopedijos centras',
         }}
         twitter={{
           title,
-          description: 'Profesionali ortopedijos klinika Vilniuje – individualios ortopedinės priemonės, konsultacijos ir reabilitacija. Kreipkitės į mūsų specialistus šiandien!',
+          description:
+            'Medicinos ir ortopedijos centras Vilniuje – individualios ortopedinės priemonės, konsultacijos ir reabilitacija. Kreipkitės į mūsų specialistus šiandien!',
         }}
         keywords={keywords}
-        author={'Ortopedijos paslaugų klinika'}
+        author={'Medicinos ir ortopedijos centras'}
       >
         <link rel="icon" href="/favicon.ico" />
       </SeoMeta>

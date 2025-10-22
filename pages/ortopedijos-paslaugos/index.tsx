@@ -14,8 +14,9 @@ type Props = {
 
 export default function ServicesIndex({ services, reviews }: Props) {
   const baseUrl = `${process.env.NEXT_PUBLIC_URL}/ortopedijos-paslaugos`
-  const title = 'Ortopedijos paslaugos | Profesionalios paslaugos Vilniuje'
-  const description = 'Mūsų ortopedijos paslaugos: konsultacijos, diagnostika, kineziterapija, fizioterapija ir kitos profesionalios paslaugos. Sužinokite daugiau ir registruokitės.'
+  const title = 'Medicinos ir ortopedijos centras | Profesionalios ortopedijos paslaugos Vilniuje'
+  const description =
+    'Medicinos ir ortopedijos centro ortopedijos paslaugos: konsultacijos, diagnostika, kineziterapija, fizioterapija ir kitos profesionalios paslaugos. Sužinokite daugiau ir registruokitės.'
 
   return (
     <>
@@ -28,14 +29,14 @@ export default function ServicesIndex({ services, reviews }: Props) {
           description,
           url: baseUrl,
           type: 'website',
-          siteName: 'Ortopedijos paslaugų klinika',
+          siteName: 'Medicinos ir ortopedijos centras',
           locale: 'lt_LT',
         }}
         twitter={{
           title,
           description,
         }}
-        author={'Ortopedijos paslaugų klinika'}
+        author={'Medicinos ir ortopedijos centras'}
       >
         <link rel="icon" href="/favicon.ico" />
       </SeoMeta>

@@ -47,7 +47,7 @@ export default function Katalogas({
 
     // SEO strings (category-aware)
     const titleBase = 'Ortopedijos technikos katalogas';
-    const siteName = 'Ortopedijos paslaugų klinika';
+    const siteName = 'Medicinos ir ortopedijos centras';
     const categorySuffix = categoryTitle ? ` | ${categoryTitle}` : '';
     const title = `${titleBase}${categorySuffix} | Įtvarai, Protezai ir Avalynė`;
 

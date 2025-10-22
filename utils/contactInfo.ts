@@ -1,4 +1,4 @@
-const DEFAULT_COMPANY_NAME = 'UAB „ORTOPEDIJOS PASLAUGŲ KLINIKA“';
+const DEFAULT_COMPANY_NAME = 'UAB „Medicinos ir ortopedijos centras“';
 const DEFAULT_EMAIL = 'info@mocc.lt';
 const DEFAULT_ADDRESS = 'Laisvės pr. 77, Vilnius';
 const DEFAULT_GMAPS_URL = 'https://goo.gl/maps/RVoW7FDnbvK3EUiBA';
