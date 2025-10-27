@@ -14,7 +14,7 @@ const float = keyframes`
 
 const HeroBanner = () => {
     const colors = getColors();
-    const sectionHeight = { lg: 700, md: 700, sm: 600, xs: 700 }
+    const sectionHeight = { lg: 700, md: 700, sm: 600, xs: 440 }
     return (
         <Stack position="relative" overflow="hidden">
             {/* Background image — replace with your best-fit photo */}
@@ -69,7 +69,7 @@ const HeroBanner = () => {
                 justifyContent="flex-end"
                 alignItems="flex-start"
                 sx={{
-                    px: { lg: 4, md: 4, sm: 3, xs: 3 },
+                    px: { lg: 4, md: 4, sm: 3, xs: 0 },
                     mx: 'auto',
                     maxWidth: '1200px',
                     width: '100%',
@@ -79,8 +79,8 @@ const HeroBanner = () => {
                 <Stack
                     spacing={1.25}
                     sx={{
-                        borderLeft: '3px solid #1E6EA1',
-                        px: 4,
+                        borderLeft: { xs: 'none', sm: '3px solid #1E6EA1' },
+                        px: 3,
                         py: 4.5,
                         maxWidth: 760,
                         color: '#fff',
@@ -88,8 +88,8 @@ const HeroBanner = () => {
                         backgroundColor: 'rgba(10, 37, 64, 0.20)',
                         boxShadow: '0 24px 60px rgba(0,0,0,0.28)',
                         // borderRadius: 2,
-                        animation: `${float} 6s ease-in-out infinite`,
-                        '@media (prefers-reduced-motion: reduce)': { animation: 'none' },
+                        // animation: `${float} 6s ease-in-out infinite`,
+                        // '@media (prefers-reduced-motion: reduce)': { animation: 'none' },
                     }}
                 >
                     <Typography
@@ -126,21 +126,6 @@ const HeroBanner = () => {
                             sx={{ px: 2.6, py: 1.1 }}
                         >
                             Peržiūrėti katalogą
-                        </Button>
-                        <Button
-                            size="large"
-                            variant="outlined"
-                            color="inherit"
-                            href="#kontaktai"
-                            sx={{
-                                borderColor: 'rgba(255,255,255,0.75)',
-                                color: '#fff',
-                                px: 2.6,
-                                py: 1.1,
-                                '&:hover': { borderColor: '#fff', backgroundColor: 'rgba(255,255,255,0.08)' },
-                            }}
-                        >
-                            Kontaktai
                         </Button>
                     </Stack>
                 </Stack>

@@ -28,7 +28,7 @@ const Footer = () => {
 
                 <Stack >
                     <Stack height={'100%'} maxWidth={200} direction={'row'}>
-                        <Logo width={'200px'} icon primaryColor={'#fff'} />
+                        <Logo white />
                     </Stack>
                     <Stack height={'100%'} direction={{ sm: 'row', xs: 'column' }} spacing={2} mt={2} justifyContent={'space-between'} >
                         <Stack spacing={1}>

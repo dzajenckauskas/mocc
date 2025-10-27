@@ -39,7 +39,7 @@ const Header = () => {
                     <Stack direction={'row'} justifyContent={'space-between'} sx={{ width: '100%', maxWidth: '1200px', mx: 'auto' }}>
                         <Stack width='300px' px={{ lg: 4, md: 4, sm: 3, xs: 3 }} height={'100%'} alignSelf={'center'}>
                             <Link passHref href={'/'} aria-label={'Medicinos ir ortopedijos centras'}>
-                                <Logo icon primaryColor={primaryColor} />
+                                <Logo />
                             </Link>
                         </Stack>
                         <Stack direction={'row'} spacing={5} p={4} sx={{ display: { xs: 'none', md: 'flex' } }}>
