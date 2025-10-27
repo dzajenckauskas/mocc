@@ -6,30 +6,36 @@ import Layout from '../Layout'
 import { getColors } from '../layout/colors'
 import Logo from '../Logo'
 import { theme } from '../theme'
+import Breadcrumbs, { Crumb } from '../shared/Breadcrumbs'
 
 const EsProjectsPage = () => {
     const colors = getColors()
-
+    const crumbs: Crumb[] = [
+        ...([{ label: "ES projektai" }]),
+    ]
     return (
         <Layout color={colors.primary}>
             <Stack
-                spacing={6}
+                color={'primary.main'}
+                direction={'column'}
                 sx={{
-                    width: '100%',
-                    maxWidth: '1200px',
-                    mx: 'auto',
+                    maxWidth: '1200px', mx: 'auto',
                     px: { lg: 4, md: 4, sm: 3, xs: 3 },
-                    py: { lg: 10, md: 8, sm: 6, xs: 5 },
+                    pb: 10,
+                    width: '100%',
                 }}
             >
+                <Breadcrumbs items={crumbs} />
                 <Stack
                     spacing={3}
                     sx={{
                         backgroundColor: '#fff',
                         // borderRadius: 3,
+                        mt: 2.5,
                         boxShadow: '0 24px 60px rgba(4,42,73,0.1)',
                         px: { lg: 8, md: 6, sm: 5, xs: 4 },
-                        py: { lg: 7, md: 6, sm: 5, xs: 4 },
+                        pt: 4,
+                        pb: { lg: 7, md: 6, sm: 5, xs: 4 },
                     }}
                 >
                     <Image

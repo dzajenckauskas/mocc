@@ -14,7 +14,7 @@ import { ProductViewData } from "../pages/ProductViewPage.types"
 import { theme } from "../theme"
 import ProductDiagnosesTablePDF from "./ProductDiagnosesTablePDF"
 
-const base = 'http://localhost:3003'
+const base = 'http://localhost:3000'
 // const base =  process.env.NEXT_PUBLIC_URL || 'http://localhost:3003'
 const url = (f: string) => `${base.replace(/\/+$/, '')}/fonts/${f}`
 
@@ -108,12 +108,6 @@ const ProductPage: React.FC<{ product: ProductViewData; index: number; brand?: s
             <View style={styles.header} fixed>
                 <View style={styles.logoWrap}>
                     <LogoPDF
-                        icon
-                        title
-                        subtitle
-                        line
-                        primaryColor={theme.palette.primary.main}
-                        width={'120'}
                     />
                 </View>
                 <Link href={product.categorySlug && baseUrl ? `${baseUrl}/ortopedijos-technika/${product.categorySlug}` : ''}>
