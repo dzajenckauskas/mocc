@@ -14,8 +14,8 @@ import { ProductViewData } from "../pages/ProductViewPage.types"
 import { theme } from "../theme"
 import ProductDiagnosesTablePDF from "./ProductDiagnosesTablePDF"
 
-const base = 'http://localhost:3000'
-// const base =  process.env.NEXT_PUBLIC_URL || 'http://localhost:3003'
+// const base = 'http://localhost:3000'
+const base = process.env.NEXT_PUBLIC_URL || 'http://localhost:3003'
 const url = (f: string) => `${base.replace(/\/+$/, '')}/fonts/${f}`
 
 try {

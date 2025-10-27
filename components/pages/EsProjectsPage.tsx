@@ -31,7 +31,7 @@ const EsProjectsPage = () => {
                     sx={{
                         backgroundColor: '#fff',
                         // borderRadius: 3,
-                        mt: 2.5,
+                        mt: 3,
                         boxShadow: '0 24px 60px rgba(4,42,73,0.1)',
                         px: { lg: 8, md: 6, sm: 5, xs: 4 },
                         pt: 4,
