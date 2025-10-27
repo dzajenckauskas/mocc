@@ -14,7 +14,7 @@ const float = keyframes`
 
 const HeroBanner = () => {
     const colors = getColors();
-    const sectionHeight = { lg: 700, md: 700, sm: 600, xs: 440 }
+    const sectionHeight = { lg: 700, md: 700, sm: 540, xs: 440 }
     return (
         <Stack position="relative" overflow="hidden">
             {/* Background image — replace with your best-fit photo */}

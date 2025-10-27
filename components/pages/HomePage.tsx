@@ -114,7 +114,7 @@ const HomePage = ({ services, reviews, newProducts, individualProducts, categori
                     />
                 </Stack>
             </Stack>
-            <ProductsSection products={newProducts} title={'NAUJOS PRIEMONĖS'} />
+            {/* <ProductsSection products={newProducts} title={'NAUJOS PRIEMONĖS'} /> */}
             <AboutFAQSection bg="#ffffff" accent="#1E6EA1" />
 
         </Layout>

@@ -26,7 +26,7 @@ const EsProjectsPage = () => {
                     spacing={3}
                     sx={{
                         backgroundColor: '#fff',
-                        borderRadius: 3,
+                        // borderRadius: 3,
                         boxShadow: '0 24px 60px rgba(4,42,73,0.1)',
                         px: { lg: 8, md: 6, sm: 5, xs: 4 },
                         py: { lg: 7, md: 6, sm: 5, xs: 4 },
@@ -35,9 +35,9 @@ const EsProjectsPage = () => {
                     <Image
                         src={'/media/es-projektai/es-logo.jpeg'}
                         alt={'Europos Sąjungos vėliava'}
-                        width={460}
-                        height={220}
-                    // style={{ height: 'auto', width: 'auto' }}
+                        width={320}
+                        height={150}
+                        style={{ height: 'auto', width: 'auto' }}
                     />
                     <Typography
                         variant='h2'
@@ -74,7 +74,7 @@ const EsProjectsPage = () => {
                             </Typography>
                             <Stack width='200px'>
 
-                                <Logo icon primaryColor={theme.palette.primary.main} />
+                                <Logo />
                             </Stack>
                             {/* <Typography fontSize={18} fontWeight={700} color={colors.dark} letterSpacing={0.8}>
                                 MEDICINOS CENTRAS
