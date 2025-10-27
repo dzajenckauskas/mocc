@@ -19,7 +19,7 @@ const ServiceCard = ({ service }: Props) => {
     const colors = getColors()
 
     return (
-        <Grid item lg={3} md={4} sm={6} xs={12}>
+        <Grid item lg={4} md={4} sm={6} xs={12}>
             <Link href={`/ortopedijos-paslaugos/${service.attributes.slug}`} passHref>
                 <Stack
                     onMouseEnter={() => setHovered(true)}

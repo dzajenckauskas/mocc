@@ -40,7 +40,6 @@ export default function ServicesIndex({ services, reviews }: Props) {
       >
         <link rel="icon" href="/favicon.ico" />
       </SeoMeta>
-
       <ServicesPage services={services} reviews={reviews} />
     </>
   )

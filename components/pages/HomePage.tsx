@@ -25,6 +25,7 @@ type Props = {
 
 const HomePage = ({ services, reviews, newProducts, individualProducts, categories }: Props) => {
     const colors = getColors()
+
     return (
         <Layout color={colors.primary} reviews={reviews}>
             <HeroBanner />

@@ -16,7 +16,7 @@ type Props = {
 
 const ServicesSection = ({ services, color }: Props) => {
     const colors = getColors()
-    const renderServices = services.data.map((service) =>
+    const renderServices = services?.data?.slice(0, 6).map((service) =>
         <ServiceCard service={service} key={service.id} />
     )
     return (
