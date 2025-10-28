@@ -34,10 +34,23 @@ type SeoMetaProps = {
     children?: ReactNode;
 }
 
+const stripTrailingSlash = (value: string) => value.replace(/\/$/, '')
+const baseUrl = process.env.NEXT_PUBLIC_URL ? stripTrailingSlash(process.env.NEXT_PUBLIC_URL) : ''
+const defaultImagePath = '/media/shared-link-cover-image.png'
+const makeAbsoluteUrl = (value?: string | null) => {
+    const input = value?.trim()
+    if (!input) return undefined
+    if (/^https?:\/\//i.test(input)) return input
+    if (input.startsWith('//')) return `https:${input}`
+    if (!baseUrl) return input
+    if (input.startsWith('/')) return `${baseUrl}${input}`
+    return `${baseUrl}/${input}`
+}
+
 const defaultViewport = 'width=device-width, initial-scale=1'
 const defaultTwitterCard: TwitterMeta['card'] = 'summary_large_image'
 const defaultRobots = 'index, follow'
-const defaultOgImage = `${process.env.NEXT_PUBLIC_URL ?? ''}/media/shared-link-cover-image.png`
+const defaultOgImage = baseUrl ? `${baseUrl}${defaultImagePath}` : defaultImagePath
 
 const SeoMeta = ({
     title,
@@ -61,7 +74,7 @@ const SeoMeta = ({
         ...openGraph,
     }
 
-    const ogImage = og.image ?? defaultOgImage
+    const ogImage = makeAbsoluteUrl(og.image) ?? defaultOgImage
 
     const twitterMeta: TwitterMeta = {
         card: defaultTwitterCard,
@@ -71,7 +84,7 @@ const SeoMeta = ({
         ...twitter,
     }
 
-    const twitterImage = twitterMeta.image ?? ogImage
+    const twitterImage = makeAbsoluteUrl(twitterMeta.image) ?? ogImage
 
     return (
         <Head>
