@@ -11,8 +11,7 @@ type Props = {
 const Logo = ({ white }: Props) => (
 	<svg
 		id="Layer_2"
-		transform='scale(0.8)'
-		style={{ marginLeft: -28, marginTop: 4 }}
+		style={{ width: 160 }}
 		data-name="Layer 2"
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 200.06 37.66"

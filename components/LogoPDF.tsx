@@ -15,6 +15,7 @@ const LogoPDF = ({ white }: Props) => (
 	<Svg
 		id="Layer_2"
 		data-name="Layer 2"
+		style={{ width: 100 }}
 		viewBox="0 0 200.06 37.66"
 	>
 		<G data-name="Layer 1-2">
