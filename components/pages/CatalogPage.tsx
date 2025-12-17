@@ -4,7 +4,7 @@ import { ReviewsResponseType } from '@/app/services/ReviewTypes'
 import ClearIcon from '@mui/icons-material/Clear'
 import SearchIcon from '@mui/icons-material/Search'
 import WarningAmberIcon from '@mui/icons-material/WarningAmber'
-import { Grid, IconButton, InputAdornment, Pagination, TextField } from '@mui/material'
+import { IconButton, InputAdornment, Pagination, TextField } from '@mui/material'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
@@ -164,16 +164,23 @@ const CatalogPage = ({ products, reviews, searchTerm = '', title, categories }: 
                         <LinkIconButton target='_blank' href={'/api/ortopedijos-technikos-katalogas'} label="ATSISIŲSTI KATALOGĄ" />
                     </Stack>
 
-                    <Stack spacing={4} direction={'column'} width={'100%'}>
+                    <Stack spacing={4} pt={3} direction={'column'} width={'100%'}>
                         {products.data.length > 0 ? (
-                            <Grid
-                                container
-                                spacing={{ xs: 2, sm: 3, md: 4 }}
-                                sx={{ position: 'relative', left: { xs: -32, md: -32 } }}
-                                justifyContent={{ xs: 'center', md: 'flex-start' }}
+                            <Box
+                                sx={{
+                                    display: 'grid',
+                                    gridTemplateColumns: {
+                                        xs: '1fr',
+                                        sm: 'repeat(2, 1fr)',
+                                        md: 'repeat(3, 1fr)',
+                                        lg: 'repeat(4, 1fr)',
+                                    },
+                                    gap: { xs: 2, sm: 3, md: 4 },
+                                    width: '100%',
+                                }}
                             >
                                 {renderProducts}
-                            </Grid>
+                            </Box>
                         ) : (
                             <Stack alignItems="center" justifyContent="center" minHeight={'40vh'}>
                                 <WarningAmberIcon fontSize='large' />
