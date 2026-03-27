@@ -8,7 +8,8 @@ nvm use 22
 cd /var/www/mocc
 
 echo "→ Pulling latest code..."
-git pull origin main
+git fetch origin main
+git reset --hard origin/main
 
 echo "→ Installing dependencies..."
 npm install --ignore-scripts
